@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug MCP Server (TypeScript)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/index.ts",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx"],
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "NODE_ENV": "development",
+        "LOG_LEVEL": "debug",
+        "PORT": "3100"
+      }
+    },
+    {
+      "name": "Debug MCP Server (Built JS)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "preLaunchTask": "build",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

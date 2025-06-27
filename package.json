@@ -1,0 +1,44 @@
+{
+  "name": "mcp-server-azure-kusto",
+  "version": "0.0.1",
+  "description": "MCP server for Azure Data Explorer (Kusto) database queries",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && cp -r src/tools/descriptions dist/tools/",
+    "start": "node dist/index.js",
+    "dev": "bun run --watch src/index.ts",
+    "dev:build": "tsc --watch",
+    "format": "prettier --write \"src/**/*.{ts,js,json}\"",
+    "lint": "tsc --noEmit",
+    "inspect": "DANGEROUSLY_OMIT_AUTH=true npx --yes @modelcontextprotocol/inspector"
+  },
+  "dependencies": {
+    "@azure/arm-kusto": "^8.2.0",
+    "@jhzhu89/azure-client-pool": "^0.0.10",
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "azure-kusto-data": "^7.0.1",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 80,
+    "tabWidth": 2
+  },
+  "keywords": [
+    "mcp",
+    "azure",
+    "kusto",
+    "data-explorer"
+  ],
+  "author": "Jiahao Zhu",
+  "license": "MIT"
+}
